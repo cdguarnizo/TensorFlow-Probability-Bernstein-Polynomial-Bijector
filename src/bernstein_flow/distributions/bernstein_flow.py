@@ -41,6 +41,8 @@ from tensorflow_probability.python.internal import prefer_static
 from tensorflow_probability.python.internal import tensor_util
 from tensorflow_probability.python.internal import tensorshape_util
 
+from typing import Any, List, Optional, Sequence, Union, Callable
+
 
 class BernsteinFlow(tfd.TransformedDistribution):
     """
