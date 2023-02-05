@@ -199,3 +199,10 @@ class BernsteinFlow(tfd.TransformedDistribution):
     def _mean(self):
         samples = self.sample(10000)
         return tf.math.reduce_mean(samples, axis=0)
+
+    @classmethod
+    def _parameter_properties(cls, dtype: Optional[Any], num_classes=None):
+        td_properties = super()._parameter_properties(dtype,
+                                                      num_classes=num_classes)
+        del td_properties['bijector']
+        return td_properties
